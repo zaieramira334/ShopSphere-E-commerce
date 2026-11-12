@@ -20,7 +20,7 @@ async function register(req, res) {
 
         const result = await db.query(
             `INSERT INTO users (username, email, password, role)
-             VALUES ('${username}', '${email}', '${password}', '${role || "USER"}')`
+             VALUES ('${username}', '${email}', '${password}')
         );
 
         return res.status(201).json({
